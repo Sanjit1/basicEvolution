@@ -1,6 +1,6 @@
 import java.util.*;
 boolean printed = false;
-int generations = 0;
+int generations = 1;
 float[] dist = new float[5];
 
 ArrayList < ball > balls = new ArrayList();
@@ -52,7 +52,7 @@ void draw() {
                 println(dist[0]);
                 println(dist[1]);
                 println("");
-                println("New Generation"+generations);
+                println("New Generation "+generations);
                 
                 generations++;
                 
@@ -81,7 +81,7 @@ void draw() {
 
                 balls.add(new ball(mutate(dna2)));
 
-                balls.add(new ball(mutate((random(0, 2) == 1) ? dna1 : dna2)));
+                balls.add(new ball(mutate((int(random(0, 2)) == 1) ? dna1 : dna2)));
 
 
 
