@@ -52,10 +52,11 @@ void draw() {
                 println(dist[0]);
                 println(dist[1]);
                 println("");
-                println("New Generation");
-
-
-
+                println("New Generation"+generations);
+                
+                generations++;
+                
+                
                 int[] dna1 = new int[100], dna2 = new int[100];
 
                 for (int ball = 0; ball < 5; ball++) {
@@ -113,7 +114,7 @@ dirs[gene] = dna[gene];
 
 
 class ball {
-    int xPos = 0, yPos = 0;
+    int xPos = width / 2 - width /4,yPos = height / 2 - height / 4;
     int[] direction = new int[100];
     int moves = 0;
     boolean going = true;
@@ -142,6 +143,11 @@ class ball {
             xPos = xPos - 50;
         }
         clear();
+        noFill();
+        stroke(255,255,0);
+        rect(width/2 - width/4,   height/2 - height/4,  width/2 + width/4,height/2 + height /4);
+        noStroke();
+        fill(255);
         circle(xPos, yPos, 10);
         box.Draw();
         distance = sqrt(sq(float(abs(xPos - box.xPos))) + sq(float(abs(yPos - box.yPos))));
@@ -154,8 +160,7 @@ class ball {
 
 
 class box {
-    int xPos = width / 2;
-    int yPos = height / 2;
+    int xPos = width / 2+ width / 4,yPos = height / 2+height / 4;
 
     box() {}
 
