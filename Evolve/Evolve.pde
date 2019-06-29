@@ -167,4 +167,4 @@ class box {
     void Draw() {
         square(xPos, yPos, 10);
     }
-}
+} 
